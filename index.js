@@ -4,8 +4,10 @@ const PORT = 8080;
 const { dbConnection } = require('./config/config');
 const swaggerUI = require('swagger-ui-express')
 const docs = require('./docs/index')
-
+const cors = require("cors")
+app.use(cors())
 app.use(express.json());
+
 
 app.use('/tasks', require("./routes/tasks"));
 app.use('/users', require("./routes/users"));
